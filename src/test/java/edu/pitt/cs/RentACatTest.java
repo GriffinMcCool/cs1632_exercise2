@@ -322,8 +322,8 @@ public class RentACatTest {
         Mockito.when(c2.getRented()).thenReturn(true);
         Mockito.when(c3.getRented()).thenReturn(false);
 		assertTrue("returnCat(2) does not return true after cat 2 is rented", r.returnCat(2));
-		Mockito.verify(r, Mockito.times(1)).returnCat(2);
-		Mockito.verify(r, Mockito.times(0)).returnCat(1);
-		Mockito.verify(r, Mockito.times(0)).returnCat(3);
+		Mockito.verify(c2, Mockito.times(1)).returnCat();
+		Mockito.verify(c1, Mockito.times(0)).returnCat();
+		Mockito.verify(c3, Mockito.times(0)).returnCat();
 	}
 }
